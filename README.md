@@ -1,1 +1,1 @@
-# S3D
+# Simplify3D Profil für Extrudr NX2 PLA Filament
