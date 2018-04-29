@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<profile name="Original Prusa i3 MK3 v2" version="2018-04-28 22:59:01" app="S3D-Software 4.0.1">
+<profile name="Original Prusa i3 MK3 v2" version="2018-04-29 09:45:58" app="S3D-Software 4.0.1">
   <baseProfile>Prusa Mendel (modified)</baseProfile>
-  <printMaterial>PLA</printMaterial>
+  <printMaterial>Extrudr PLA NX2</printMaterial>
   <printQuality>FAST 0.2mm</printQuality>
   <printExtruders></printExtruders>
   <extruder name="Primary Extruder">
@@ -31,7 +31,7 @@
   <startPointOriginY>0</startPointOriginY>
   <sequentialIslands>0</sequentialIslands>
   <spiralVaseMode>0</spiralVaseMode>
-  <firstLayerHeightPercentage>75</firstLayerHeightPercentage>
+  <firstLayerHeightPercentage>90</firstLayerHeightPercentage>
   <firstLayerWidthPercentage>95</firstLayerWidthPercentage>
   <firstLayerUnderspeed>0.2</firstLayerUnderspeed>
   <useRaft>0</useRaft>
@@ -62,7 +62,7 @@
   <infillExtruder>0</infillExtruder>
   <internalInfillPattern>Grid</internalInfillPattern>
   <externalInfillPattern>Rectilinear</externalInfillPattern>
-  <infillPercentage>0</infillPercentage>
+  <infillPercentage>20</infillPercentage>
   <outlineOverlapPercentage>25</outlineOverlapPercentage>
   <infillExtrusionWidthPercentage>100</infillExtrusionWidthPercentage>
   <minInfillLength>2</minInfillLength>
@@ -108,7 +108,7 @@
     <setpoint layer="2" speed="100"/>
   </fanSpeed>
   <blipFanToFullPower>1</blipFanToFullPower>
-  <adjustSpeedForCooling>0</adjustSpeedForCooling>
+  <adjustSpeedForCooling>1</adjustSpeedForCooling>
   <minSpeedLayerTime>20</minSpeedLayerTime>
   <minCoolingSpeedSlowdown>10</minCoolingSpeedSlowdown>
   <increaseFanForCooling>0</increaseFanForCooling>
@@ -171,7 +171,7 @@
   <applyBridgingToPerimeters>0</applyBridgingToPerimeters>
   <filamentDiameters>1.75|1.75|1.75|1.75|1.75|1.75</filamentDiameters>
   <filamentPricesPerKg>600|215|215|215|215|215</filamentPricesPerKg>
-  <filamentDensities>1.25|1.25|1.25|1.25|1.25|1.25</filamentDensities>
+  <filamentDensities>1.3|1.25|1.25|1.25|1.25|1.25</filamentDensities>
   <useMinPrintHeight>0</useMinPrintHeight>
   <minPrintHeight>0</minPrintHeight>
   <useMaxPrintHeight>0</useMaxPrintHeight>
@@ -207,7 +207,13 @@
       <relayBetweenLoops>0</relayBetweenLoops>
       <stabilizeAtStartup>1</stabilizeAtStartup>
       <setpoint layer="1" temperature="220"/>
-      <setpoint layer="2" temperature="205"/>
+      <setpoint layer="50" temperature="215"/>
+      <setpoint layer="100" temperature="210"/>
+      <setpoint layer="150" temperature="200"/>
+      <setpoint layer="200" temperature="195"/>
+      <setpoint layer="250" temperature="190"/>
+      <setpoint layer="300" temperature="185"/>
+      <setpoint layer="350" temperature="180"/>
     </temperatureController>
     <globalBedTemperature>60</globalBedTemperature>
     <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
@@ -216,27 +222,9 @@
       <setpoint layer="2" speed="100"/>
     </fanSpeed>
   </autoConfigureMaterial>
-  <autoConfigureMaterial name="ABS">
-    <globalExtruderTemperature>255</globalExtruderTemperature>
-    <globalBedTemperature>100</globalBedTemperature>
-    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
-    <fanSpeed>
-      <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="0"/>
-    </fanSpeed>
-  </autoConfigureMaterial>
   <autoConfigureMaterial name="PET">
     <globalExtruderTemperature>240</globalExtruderTemperature>
     <globalBedTemperature>90</globalBedTemperature>
-    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
-    <fanSpeed>
-      <setpoint layer="1" speed="0"/>
-      <setpoint layer="2" speed="50"/>
-    </fanSpeed>
-  </autoConfigureMaterial>
-  <autoConfigureMaterial name="ColorFabb XT">
-    <globalExtruderTemperature>250</globalExtruderTemperature>
-    <globalBedTemperature>85</globalBedTemperature>
     <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
     <fanSpeed>
       <setpoint layer="1" speed="0"/>
@@ -271,8 +259,8 @@
   </autoConfigureQuality>
   <autoConfigureQuality name="FAST 0.2mm">
     <layerHeight>0.2</layerHeight>
-    <infillPercentage>0</infillPercentage>
-    <firstLayerHeightPercentage>75</firstLayerHeightPercentage>
+    <infillPercentage>20</infillPercentage>
+    <firstLayerHeightPercentage>90</firstLayerHeightPercentage>
     <firstLayerWidthPercentage>95</firstLayerWidthPercentage>
     <topSolidLayers>5</topSolidLayers>
     <bottomSolidLayers>4</bottomSolidLayers>
@@ -321,4 +309,38 @@
       <wipeDistance>2</wipeDistance>
     </extruder>
   </autoConfigureQuality>
+  <autoConfigureMaterial name="Extrudr PLA NX2">
+    <temperatureController name="Primary Extruder">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>0</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="220"/>
+      <setpoint layer="2" temperature="205"/>
+    </temperatureController>
+    <globalBedTemperature>60</globalBedTemperature>
+    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
+    <fanSpeed>
+      <setpoint layer="1" speed="0"/>
+      <setpoint layer="2" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
+  <autoConfigureMaterial name="Extrudr PETG">
+    <temperatureController name="Primary Extruder">
+      <temperatureNumber>0</temperatureNumber>
+      <isHeatedBed>0</isHeatedBed>
+      <relayBetweenLayers>0</relayBetweenLayers>
+      <relayBetweenLoops>0</relayBetweenLoops>
+      <stabilizeAtStartup>1</stabilizeAtStartup>
+      <setpoint layer="1" temperature="230"/>
+      <setpoint layer="2" temperature="240"/>
+    </temperatureController>
+    <globalBedTemperature>90</globalBedTemperature>
+    <globalExtrusionMultiplier>1</globalExtrusionMultiplier>
+    <fanSpeed>
+      <setpoint layer="1" speed="0"/>
+      <setpoint layer="2" speed="100"/>
+    </fanSpeed>
+  </autoConfigureMaterial>
 </profile>
